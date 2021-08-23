@@ -43,9 +43,8 @@ class App extends Component {
             <Subject title={this.state.subject.title} desc={this.state.subject.desc}></Subject>
             <TOC data={this.state.list}
                  onChangePage={function(id){
-                     debugger
                     this.setState({
-                        selectedToc: Number(id)
+                        selectedToc: id
                     });
                  }.bind(this)}
             >

@@ -16,7 +16,7 @@ class TOC extends Component {
 					// this.setState({
 					// 	seleletedToc: e.target.dataset.id
 					// });
-					this.props.onChangePage();
+					this.props.onChangePage(id);
 					//this.props.onChangePage(e.target.dataset.id);
 
 				}.bind(this, data[i].id)
