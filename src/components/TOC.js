@@ -1,8 +1,13 @@
 import React, {Component} from "react";
 
 class TOC extends Component {
+	shouldComponentUpdate(nextProps, nextState, nextContext) {
+		//debugger
+		return nextProps.data !== this.props.data;
+	}
 
 	render(){
+		console.log('#####> TOC render');
 		let data = this.props.data;
 		let i = 0;
         let list = [];
@@ -12,13 +17,8 @@ class TOC extends Component {
 				onClick={
 				function(id, e){
 					e.preventDefault();
-					//debugger;
-					// this.setState({
-					// 	seleletedToc: e.target.dataset.id
-					// });
 					this.props.onChangePage(id);
-					//this.props.onChangePage(e.target.dataset.id);
-
+					//this.props.onChangePage(e.target.dataset.id); // data-id
 				}.bind(this, data[i].id)
 			}>{data[i].title}</a></li>);
         	i += 1;
